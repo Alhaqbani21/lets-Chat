@@ -1,7 +1,9 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
-import landingImage from '../assets/landingImage.png';
+import landingImage from '../assets/landingImage.svg';
+import chattingImage from '../assets/chattingImage.svg';
 import bg1 from '../assets/bg.png';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   return (
@@ -22,7 +24,7 @@ function LandingPage() {
           <div className="hero-content flex-col lg:flex-row-reverse max-lg:flex-wrap">
             <img
               src={landingImage}
-              className="max-w-lg max-md:max-w-xs rounded-lg shadow-2xl "
+              className="max-w-[50%] max-md:max-w-xs rounded-lg shadow-2xl p-5"
             />
             <div>
               <h1
@@ -41,6 +43,38 @@ function LandingPage() {
                 Connect seamlessly between two mobile devices and enjoy
                 real-time conversations.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-full min-h-full border-t-4 flex justify-center items-center py-10 bg-gray-500">
+        <div className="flex justify-center items-center max-md:flex-col ">
+          <img
+            className="max-w-[50%] max-md:max-w-xs rounded-lg shadow-2xl p-5"
+            src={chattingImage}
+            alt="chatImage"
+          />
+
+          <div className="card-body rounded-lg max-md:shadow-[rgba(17, 12, 46, 0.15) 0px 48px 100px 0px]">
+            <span
+              className="card-title text-4xl block"
+              style={{
+                textShadow: `1px 1px 1px #000,
+                    -1px 1px 1px #000,
+                    -1px -1px 0 #000,
+                    1px -1px 0 #000 `,
+              }}
+            >
+              Do you want to try
+              <span className="text-cyan-200 "> Let's Chat </span> ?
+            </span>
+            <p className="text-xl">Don't miss this moment try it now </p>
+            <div className="card-actions justify-end max-md:justify-center">
+              <Link to={'./chat'}>
+                <button className="btn btn-active bg-gray-700 hover:bg-gray-400 lg:text-2xl">
+                  Try it now
+                </button>
+              </Link>
             </div>
           </div>
         </div>

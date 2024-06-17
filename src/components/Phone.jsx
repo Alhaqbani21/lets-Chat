@@ -18,7 +18,7 @@ function Phone({ name, messages, onSendMessage, receiver }) {
   };
 
   return (
-    <div className="w-96 mx-auto my-10">
+    <div className="w-96 mx-auto my-10 flex justify-center items-center flex-col">
       <h2
         className="text-center text-2xl font-bold mb-4 text-white"
         style={{
@@ -32,8 +32,8 @@ function Phone({ name, messages, onSendMessage, receiver }) {
       </h2>
       <div className="mockup-phone border-cyan-300">
         <div className="camera"></div>
-        <div className="display bg-whatsapp-bg bg-cover bg-center p-4 h-full flex flex-col justify-between">
-          <div className="contact-info flex items-center my-5 border-b-2 pb-2 border-cyan-200">
+        <div className="display bg-whatsapp-bg bg-cover bg-center p-1 h-full flex flex-col justify-between">
+          <div className="contact-info flex items-center my-5 border-b-2 pb-2 border-cyan-200 p-3">
             <img
               src={getAvatarUrl()}
               alt={`${receiver}'s avatar`}
@@ -44,7 +44,7 @@ function Phone({ name, messages, onSendMessage, receiver }) {
               <p className="text-gray-700">Online</p>
             </div>
           </div>
-          <div className="artboard phone-1 flex flex-col space-y-2 mb-4 overflow-y-auto overflow-x-hidden">
+          <div className="artboard phone-1 flex flex-col space-y-2 mb-4 overflow-y-auto overflow-x-hidden p-2">
             {messages.map((msg, index) => (
               <Message
                 key={index}

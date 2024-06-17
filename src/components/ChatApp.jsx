@@ -9,7 +9,7 @@ function ChatApp({ input1, input2 }) {
   };
 
   return (
-    <div className="flex justify-evenly items-center w-full gap-5 flex-wrap">
+    <div className="flex justify-evenly items-center w-full gap-5 flex-wrap max-md:flex-col max-md:justify-center">
       <div className="flex flex-col justify-center items-center">
         <Phone
           name={input1}
