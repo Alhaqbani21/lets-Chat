@@ -4,11 +4,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import MainPage from '../pages/MainPage';
 import LandingPage from '../pages/LandingPage';
+import ErrorPage from '../pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LandingPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: '/chat',
