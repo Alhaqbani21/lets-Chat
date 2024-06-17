@@ -4,7 +4,7 @@ import logo from '../assets/logo.png';
 
 function NavBar(props) {
   return (
-    <div className="navbar bg-cyan-900">
+    <div className="navbar bg-gray-700">
       <div className="navbar-start flax items-center ms-5 gap-3">
         <img src={logo} className="w-9" alt="" />
         <a className="text-xl ">Let's Chat</a>
