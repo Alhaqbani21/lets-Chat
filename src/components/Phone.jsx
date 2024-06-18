@@ -5,6 +5,7 @@ import SendButton from './SendButton';
 
 function Phone({ name, messages, onSendMessage, receiver }) {
   const [inputValue, setInputValue] = useState('');
+  const [borderNow, setBorderNow] = useState('border-gray-300');
 
   const handleSendMessage = () => {
     if (inputValue.trim()) {
@@ -30,10 +31,12 @@ function Phone({ name, messages, onSendMessage, receiver }) {
       >
         {name}'s Phone
       </h2>
-      <div className="mockup-phone border-cyan-300">
+      <div className={`mockup-phone ${borderNow}`}>
         <div className="camera"></div>
         <div className="display bg-whatsapp-bg bg-cover bg-center p-1 h-full flex flex-col justify-between">
-          <div className="contact-info flex items-center my-5 border-b-2 pb-2 border-cyan-200 p-3">
+          <div
+            className={`contact-info flex items-center my-5 border-b-2 pb-2 ${borderNow} p-3`}
+          >
             <img
               src={getAvatarUrl()}
               alt={`${receiver}'s avatar`}
@@ -59,8 +62,14 @@ function Phone({ name, messages, onSendMessage, receiver }) {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              className="flex-grow p-2 border border-gray-300 rounded-full text-black"
+              className="flex-grow p-2 border border-gray-300 rounded-full text-black peer"
               placeholder="Type a message"
+              onFocus={() => {
+                setBorderNow('border-blue-500');
+              }}
+              onBlur={(e) => {
+                setBorderNow('border-gray-300');
+              }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   handleSendMessage();
