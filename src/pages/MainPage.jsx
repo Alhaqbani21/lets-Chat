@@ -8,16 +8,34 @@ function MainPage() {
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
   const [showPhones, setShowPhones] = useState(false);
+  const [invalidInput1, setInvalidInput1] = useState('');
+  const [invalidInput2, setInvalidInput2] = useState('');
 
   const handleStartChat = () => {
-    if (input1 && input2) {
-      if (input1 !== input2) {
-        setShowPhones(true);
-      } else {
-        alert('Names should be different');
-      }
+    let valid = true;
+
+    if (!input1) {
+      setInvalidInput1('Invalid Input');
+      valid = false;
     } else {
-      alert('Please enter names for both phones.');
+      setInvalidInput1('');
+    }
+
+    if (!input2) {
+      setInvalidInput2('Invalid Input');
+      valid = false;
+    } else {
+      setInvalidInput2('');
+    }
+
+    if (input1 && input2 && input1 === input2) {
+      setInvalidInput1('Names should be different');
+      setInvalidInput2('Names should be different');
+      valid = false;
+    }
+
+    if (valid) {
+      setShowPhones(true);
     }
   };
 
@@ -56,6 +74,8 @@ function MainPage() {
               setInput1={setInput1}
               setInput2={setInput2}
               onStartChat={handleStartChat}
+              invalidInput1={invalidInput1}
+              invalidInput2={invalidInput2}
             />
           )}
           {showPhones && (

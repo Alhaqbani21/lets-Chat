@@ -21,6 +21,7 @@ function StartingInputs(props) {
             }
           }}
         />
+        <label className="text-red-400 text-base">{props.invalidInput1}</label>
       </div>
       <div className="flex flex-col gap-1 lg:text-2xl">
         <label className="text-gray-400 font-bold">
@@ -39,7 +40,9 @@ function StartingInputs(props) {
             }
           }}
         />
+        <label className="text-red-400 text-base">{props.invalidInput2}</label>
       </div>
+
       <button
         className="btn btn-active bg-gray-700 hover:bg-gray-400 lg:text-2xl"
         onClick={props.onStartChat}
