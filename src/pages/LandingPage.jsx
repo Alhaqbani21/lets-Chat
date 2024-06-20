@@ -22,7 +22,7 @@ function LandingPage() {
           <div className="hero-content flex-col lg:flex-row-reverse max-lg:flex-wrap ">
             <img
               src={landingImage}
-              className="max-w-[50%] max-md:max-w-xs rounded-lg shadow-2xl p-5 max-lg:mb-5 "
+              className="max-w-[50%] max-md:max-w-xs rounded-lg p-5 max-lg:mb-5 "
             />
             <div>
               <h1

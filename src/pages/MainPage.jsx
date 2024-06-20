@@ -58,7 +58,7 @@ function MainPage() {
           }}
         ></div>
         <div className="relative flex flex-col justify-center items-center min-h-screen gap-10 pt-5 ">
-          <div className="w-[50%] flex flex-col justify-center items-center gap-5 max-md:w-[80%] rounded-lg shadow-lg py-5">
+          <div className="w-[50%] flex flex-col justify-center items-center gap-5 max-md:w-[80%] rounded-lg  py-5">
             <div className="flex flex-row-reverse max-md:flex-col justify-center items-center gap-5 max-md:w-[80%] max-md:py-5 ">
               <img
                 className="max-w-[35%] max-md:max-w-xs  p-5 max-lg:mb-5 "
