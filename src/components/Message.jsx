@@ -8,7 +8,11 @@ const Message = ({ authorName, messageContent, isSender }) => {
     : 'bg-gray-500 text-white self-end text-right';
 
   return (
-    <div className={`flex flex-col ${isSender ? 'items-start' : 'items-end'}`}>
+    <div
+      className={`flex flex-col max-md:w-[%50] ${
+        isSender ? 'items-start' : 'items-end'
+      }`}
+    >
       <div
         className={`text-sm text-gray-300 mb-1 ${
           isSender ? 'text-left' : 'text-right'

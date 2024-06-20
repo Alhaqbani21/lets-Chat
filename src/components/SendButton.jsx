@@ -11,7 +11,7 @@ const SendButton = (props) => {
             viewBox="0 0 24 24"
             width="24"
             height="24"
-            className="flex justify-center items-center"
+            className="flex justify-center items-center max-md:w-5"
           >
             <path fill="none" d="M0 0h24v24H0z"></path>
             <path

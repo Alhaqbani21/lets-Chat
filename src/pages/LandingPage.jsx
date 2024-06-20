@@ -11,7 +11,7 @@ function LandingPage() {
       <NavBar title="Chat Now" link="./chat" color="text-cyan-300" />
       <div className="relative w-full h-full min-h-screen">
         <div
-          className="absolute inset-[1px] bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url(${bg1})`,
             backgroundRepeat: 'no-repeat',
