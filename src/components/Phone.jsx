@@ -5,7 +5,7 @@ import SendButton from './SendButton';
 function Phone({ name, messages, onSendMessage, receiver }) {
   const [inputValue, setInputValue] = useState('');
   const [borderNow, setBorderNow] = useState('border-gray-300');
-  const inputFoucs = useRef(null);
+
   const chatContainerRef = useRef(null);
 
   const handleSendMessage = () => {
@@ -17,7 +17,7 @@ function Phone({ name, messages, onSendMessage, receiver }) {
             chatContainerRef.current.scrollHeight;
         }
       }, 0);
-      inputFoucs.current.focus();
+
       setInputValue('');
     }
   };
@@ -27,7 +27,7 @@ function Phone({ name, messages, onSendMessage, receiver }) {
   };
 
   return (
-    <div className="w-96 mx-auto my-10 flex justify-center items-center flex-col max-md:h-[100vh]">
+    <div className="w-96 mx-auto my-10 flex justify-center items-center flex-col max-md:h-[90vh] ">
       <h2
         className="text-center text-2xl font-bold mb-4 text-white"
         style={{
@@ -39,7 +39,7 @@ function Phone({ name, messages, onSendMessage, receiver }) {
       >
         {name}'s Phone
       </h2>
-      <div className={`mockup-phone ${borderNow}`}>
+      <div className={`mockup-phone ${borderNow} overflow-hidden`}>
         <div className="camera"></div>
         <div className="display bg-whatsapp-bg bg-cover bg-center p-1 h-full flex flex-col justify-between">
           <div
@@ -70,7 +70,6 @@ function Phone({ name, messages, onSendMessage, receiver }) {
           </div>
           <div className="flex items-center space-x-2 p-2 rounded">
             <input
-              ref={inputFoucs}
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
