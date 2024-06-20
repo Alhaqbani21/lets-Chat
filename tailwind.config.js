@@ -32,7 +32,7 @@ export default {
         'whatsapp-bg': "url('/src/assets/whatappBg.png')",
       },
       fontFamily: {
-        Roboto: ['Roboto', 'sans-serif'],
+        Roboto: ['Comic Neue', 'sans-serif'],
       },
     },
   },

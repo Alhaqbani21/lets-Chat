@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bg1 from '../assets/bg.png';
+import bg1 from '../assets/bg.jpg';
 
 function ErrorPage() {
   return (

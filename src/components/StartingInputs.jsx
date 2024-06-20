@@ -5,13 +5,13 @@ function StartingInputs(props) {
   return (
     <>
       <div className="flex flex-col gap-1 lg:text-2xl">
-        <label className="text-gray-900 font-bold">
+        <label className="text-gray-400 font-bold">
           Enter Name for 1st phone
         </label>
         <input
           type="text"
           name="text"
-          className={styles.input}
+          className={`${styles.input} placeholder-gray-500`}
           placeholder="Phone Name 1"
           value={props.input1}
           onChange={(e) => props.setInput1(e.target.value)}
@@ -23,13 +23,13 @@ function StartingInputs(props) {
         />
       </div>
       <div className="flex flex-col gap-1 lg:text-2xl">
-        <label className="text-gray-900 font-bold">
+        <label className="text-gray-400 font-bold">
           Enter Name for 2nd phone
         </label>
         <input
           type="text"
           name="text"
-          className={styles.input}
+          className={`${styles.input} placeholder-gray-500`}
           placeholder="Phone Name 2"
           value={props.input2}
           onChange={(e) => props.setInput2(e.target.value)}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import bg1 from '../assets/bg.png';
+import bg1 from '../assets/bg.jpg';
 import NavBar from '../components/NavBar';
 import ChatApp from '../components/ChatApp';
 import StartingInputs from '../components/StartingInputs';
@@ -35,16 +35,16 @@ function MainPage() {
           }}
         ></div>
         <div className="relative flex flex-col justify-center items-center min-h-screen gap-10 pt-5">
-          <h1 className="font-Roboto tracking-wide text-3xl leading-10 text-center lg:text-5xl">
+          <h1 className="tracking-wide text-3xl leading-10 text-center lg:text-5xl font-extrabold">
             Experience the ease of{' '}
-            <span className="text-gray-700 font-extrabold tracking-widest">
+            <span className="font-extrabold tracking-widest">
               <p
-                style={{
-                  textShadow: `2px 2px 2px gray,
-                    -1px 1px 1px gray,
-                    -1px -1px 0 gray,
-                    1px -1px 0 gray `,
-                }}
+              // style={{
+              //   textShadow: `1px 1px 1px gray,
+              //     -1px 1px 1px gray,
+              //     -1px -1px 0 gray,
+              //     1px -1px 0 gray `,
+              // }}
               >
                 Communicating
               </p>
