@@ -30,8 +30,6 @@ function MainPage() {
           style={{
             backgroundImage: `url(${bg1})`,
             backgroundRepeat: 'no-repeat',
-            filter: 'blur(8px)',
-            WebkitFilter: 'blur(8px)',
           }}
         ></div>
         <div className="relative flex flex-col justify-center items-center min-h-screen gap-10 pt-5">

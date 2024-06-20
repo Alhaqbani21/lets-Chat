@@ -15,20 +15,18 @@ function LandingPage() {
           style={{
             backgroundImage: `url(${bg1})`,
             backgroundRepeat: 'no-repeat',
-            filter: 'blur(5px)',
-            WebkitFilter: 'blur(5px)',
           }}
         ></div>
 
-        <div className="relative flex flex-col justify-center items-center min-h-screen">
+        <div className="relative flex flex-col justify-center items-center min-h-screen ">
           <div className="hero-content flex-col lg:flex-row-reverse max-lg:flex-wrap ">
             <img
               src={landingImage}
-              className="max-w-[50%] max-md:max-w-xs rounded-lg shadow-2xl p-5 max-lg:mb-5"
+              className="max-w-[50%] max-md:max-w-xs rounded-lg shadow-2xl p-5 max-lg:mb-5 "
             />
             <div>
               <h1
-                className="text-5xl font-extrabold text-cyan-200"
+                className="text-5xl font-extrabold text-cyan-200 lg:text-7xl"
                 style={{
                   textShadow: `1px 1px 1px #000,
                     -2px 2px 2px #000,
@@ -47,7 +45,7 @@ function LandingPage() {
           </div>
         </div>
       </div>
-      {/* <div className="h-full min-h-full border-t-4 flex justify-center items-center py-10 bg-gray-500">
+      {/* <div className="h-full min-h-full flex justify-center items-center py-10 bg-gray-600 ">
         <div className="flex justify-center items-center max-md:flex-col ">
           <img
             className="max-w-[50%] max-md:max-w-xs rounded-lg shadow-2xl p-5"
