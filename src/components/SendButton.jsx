@@ -1,5 +1,5 @@
 import React from 'react';
-import './SendButton.css'; // Import your CSS file
+import './SendButton.css';
 
 const SendButton = (props) => {
   return (

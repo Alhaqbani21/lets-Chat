@@ -3,6 +3,7 @@ import Message from './Message';
 import SendButton from './SendButton';
 import IconUp from '../assets/IconUp.jsx';
 import IconDown from '../assets/IconDown.jsx';
+import styles from './Phone.module.css';
 
 const Phone = forwardRef(
   (
@@ -33,7 +34,7 @@ const Phone = forwardRef(
     return (
       <div
         ref={ref}
-        className="w-96 mx-auto my-10 flex justify-center items-center flex-col max-md:h-[80vh]"
+        className="w-96 mx-auto my-10 flex justify-center items-center flex-col max-md:h-[80vh] max-md:min-h-[700px]"
       >
         <h2
           className="text-center text-2xl font-bold mb-4 text-white"
@@ -71,7 +72,8 @@ const Phone = forwardRef(
 
             <div
               ref={chatContainerRef}
-              className="artboard phone-1 flex flex-col-reverse space-y-2 mb-4 overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2"
+              className={`artboard phone-1 flex flex-col-reverse space-y-2 mb-4 
+                overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2 ${styles.phoneScrolBar}`}
             >
               {messages.map((msg, index) => (
                 <Message
@@ -82,12 +84,12 @@ const Phone = forwardRef(
                 />
               ))}
             </div>
-            <div className="flex items-center space-x-2 p-2 rounded">
+            <div className="flex items-center space-x-2 p-2 rounded bg-base-100">
               <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                className="flex-grow p-2 border border-gray-300 rounded-full text-black peer max-md:max-w-[80%]"
+                className="flex-grow p-2 border border-gray-300 rounded-full  peer max-md:max-w-[80%] bg-gray-500 text-white"
                 placeholder="Type a message"
                 onFocus={() => setBorderNow('border-blue-500')}
                 onBlur={() => setBorderNow('border-gray-300')}
