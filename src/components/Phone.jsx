@@ -71,7 +71,7 @@ const Phone = forwardRef(
 
             <div
               ref={chatContainerRef}
-              className="artboard phone-1 flex flex-col space-y-2 mb-4 overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2"
+              className="artboard phone-1 flex flex-col-reverse space-y-2 mb-4 overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2"
             >
               {messages.map((msg, index) => (
                 <Message

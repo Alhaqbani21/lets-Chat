@@ -11,7 +11,7 @@ function ChatApp({ input1, input2 }) {
 
   const handleSendMessage = (author, content) => {
     const newMessage = { author, content };
-    setMessages([...messages, newMessage]);
+    setMessages([newMessage, ...messages]);
 
     if (author === input1 && phone1ChatRef.current) {
       phone1ChatRef.current.scrollIntoView();
