@@ -99,7 +99,7 @@ const Phone = forwardRef(
                   />
                 ))}
               </div>
-              <div className="flex items-center space-x-2 p-2 rounded bg-base-100">
+              <div className="flex items-center space-x-2 p-2 rounded">
                 <input
                   type="text"
                   value={inputValue}
