@@ -16,6 +16,17 @@ const Phone = forwardRef(
     const [borderNow, setBorderNow] = useState('border-gray-300');
     const chatContainerRef = useRef(null);
     const [showLetsChat, setShowLetsChat] = useState(false);
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    const formatDate = (date) => {
+      const options = { weekday: 'long', month: 'long', day: 'numeric' };
+      return date.toLocaleDateString(undefined, options);
+    };
+    const formatTime = (date) => {
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+      return `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+    };
 
     const handleSendMessage = () => {
       if (inputValue.trim()) {
@@ -123,13 +134,13 @@ const Phone = forwardRef(
                 overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2 ${styles.phoneScrolBar}`}
               >
                 <div className="flex justify-center items-center flex-col">
-                  <h1 className="tracking-widest subpixel-antialiased text-7xl leading-10">
-                    9:41
+                  <h1 className="tracking-widest  text-5xl leading-10">
+                    {formatTime(currentTime)}
                   </h1>
-                  <h1 className="tracking-widest subpixel-antialiased text-base leading-10">
-                    Friday, June 22
+                  <h1 className="tracking-widest text-base leading-10">
+                    {formatDate(currentTime)}
                   </h1>
-                  <h1 className="tracking-widest subpixel-antialiased text-3xl leading-10">
+                  <h1 className="tracking-widest text-3xl leading-10">
                     Welcome {name}
                   </h1>
                 </div>
