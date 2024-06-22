@@ -30,6 +30,7 @@ export default {
     extend: {
       backgroundImage: {
         'whatsapp-bg': "url('/src/assets/whatappBg.png')",
+        'iphone-bg': "url('/src/assets/bg-iphone.png')",
       },
       fontFamily: {
         Roboto: ['Comic Neue', 'sans-serif'],

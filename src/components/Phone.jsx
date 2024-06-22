@@ -4,6 +4,8 @@ import SendButton from './SendButton';
 import IconUp from '../assets/IconUp.jsx';
 import IconDown from '../assets/IconDown.jsx';
 import styles from './Phone.module.css';
+import logo from '../assets/logo.png';
+import flashLight from '../assets/ios-flashlight.svg';
 
 const Phone = forwardRef(
   (
@@ -13,6 +15,7 @@ const Phone = forwardRef(
     const [inputValue, setInputValue] = useState('');
     const [borderNow, setBorderNow] = useState('border-gray-300');
     const chatContainerRef = useRef(null);
+    const [showLetsChat, setShowLetsChat] = useState(false);
 
     const handleSendMessage = () => {
       if (inputValue.trim()) {
@@ -34,7 +37,7 @@ const Phone = forwardRef(
     return (
       <div
         ref={ref}
-        className="w-96 mx-auto my-10 flex justify-center items-center flex-col max-md:h-[80vh] max-md:min-h-[700px]"
+        className="w-96 mx-auto my-10 flex justify-center items-center flex-col max-md:h-[100vh]"
       >
         <h2
           className="text-center text-2xl font-bold mb-4 text-white"
@@ -48,60 +51,106 @@ const Phone = forwardRef(
           className={`mockup-phone ${borderNow} overflow-hidden max-md:max-w-[80%]`}
         >
           <div className="camera"></div>
-          <div className="display bg-whatsapp-bg bg-cover bg-center p-1 h-full flex flex-col justify-between">
-            <div
-              className={`contact-info flex items-center my-5 border-b-2 pb-2 ${borderNow} p-3`}
-            >
-              <img
-                src={getAvatarUrl()}
-                alt={`${receiver}'s avatar`}
-                className="w-12 h-12 rounded-full mr-3 max-md:w-10 max-md:h-10"
-              />
-              <div>
-                <h3 className="text-lg font-semibold max-md:text-base">
-                  {receiver}
-                </h3>
-                <p className="text-gray-700">Online</p>
-              </div>
-              {positionPhone === 'up' ? (
-                <IconUp onClick={onIconClick} />
-              ) : (
-                <IconDown onClick={onIconClick} />
-              )}
-            </div>
-
-            <div
-              ref={chatContainerRef}
-              className={`artboard phone-1 flex flex-col-reverse space-y-2 mb-4 
-                overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2 ${styles.phoneScrolBar}`}
-            >
-              {messages.map((msg, index) => (
-                <Message
-                  key={index}
-                  authorName={msg.author}
-                  messageContent={msg.content}
-                  isSender={msg.author === name}
+          {showLetsChat == true && (
+            <div className="display bg-whatsapp-bg bg-cover bg-center p-1 max-md:h-[35rem]  h-[40rem] flex flex-col justify-between ">
+              <div
+                className={`contact-info flex items-center my-5 border-b-2 pb-2 ${borderNow} p-3`}
+              >
+                <img
+                  src={getAvatarUrl()}
+                  alt={`${receiver}'s avatar`}
+                  className="w-12 h-12 rounded-full mr-3 max-md:w-10 max-md:h-10"
                 />
-              ))}
+                <div>
+                  <h3 className="text-lg font-semibold max-md:text-base">
+                    {receiver}
+                  </h3>
+                  <p className="text-gray-700">Online</p>
+                </div>
+                {positionPhone === 'up' ? (
+                  <IconUp onClick={onIconClick} />
+                ) : (
+                  <IconDown onClick={onIconClick} />
+                )}
+              </div>
+
+              <div
+                ref={chatContainerRef}
+                className={`artboard phone-1 flex flex-col-reverse space-y-2 mb-4 
+                overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2 ${styles.phoneScrolBar} `}
+              >
+                {messages.map((msg, index) => (
+                  <Message
+                    key={index}
+                    authorName={msg.author}
+                    messageContent={msg.content}
+                    isSender={msg.author === name}
+                  />
+                ))}
+              </div>
+              <div className="flex items-center space-x-2 p-2 rounded bg-base-100">
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  className="flex-grow p-2 border border-gray-300 rounded-full  peer max-md:max-w-[80%] bg-gray-500 text-white"
+                  placeholder="Type a message"
+                  onFocus={() => setBorderNow('border-blue-500')}
+                  onBlur={() => setBorderNow('border-gray-300')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleSendMessage();
+                    }
+                  }}
+                />
+                <SendButton onClick={handleSendMessage} />
+              </div>
             </div>
-            <div className="flex items-center space-x-2 p-2 rounded bg-base-100">
-              <input
-                type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                className="flex-grow p-2 border border-gray-300 rounded-full  peer max-md:max-w-[80%] bg-gray-500 text-white"
-                placeholder="Type a message"
-                onFocus={() => setBorderNow('border-blue-500')}
-                onBlur={() => setBorderNow('border-gray-300')}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    handleSendMessage();
-                  }
-                }}
-              />
-              <SendButton onClick={handleSendMessage} />
+          )}
+          {showLetsChat == false && (
+            <div className="display bg-iphone-bg bg-cover bg-center p-1 max-md:h-[35rem] h-[40rem] flex flex-col justify-between">
+              <div
+                className={`contact-info flex items-center my-5  pb-2 ${borderNow} p-3`}
+              >
+                <div className="w-12 h-12 rounded-full mr-3 max-md:w-10 max-md:h-10" />
+                <div>
+                  <h3 className="text-lg font-semibold max-md:text-base"></h3>
+                  <p className="text-gray-700"></p>
+                </div>
+              </div>
+              <div
+                className={`artboard phone-1 flex flex-col justify-between space-y-2 mb-4 
+                overflow-y-auto overflow-x-hidden p-2 max-w-[100%] mt-2 ${styles.phoneScrolBar}`}
+              >
+                <div className="flex justify-center items-center flex-col">
+                  <h1 className="tracking-widest subpixel-antialiased text-7xl leading-10">
+                    9:41
+                  </h1>
+                  <h1 className="tracking-widest subpixel-antialiased text-base leading-10">
+                    Friday, June 22
+                  </h1>
+                  <h1 className="tracking-widest subpixel-antialiased text-3xl leading-10">
+                    Welcome {name}
+                  </h1>
+                </div>
+                <div className="flex justify-between mx-2">
+                  <img
+                    className="w-12 bg-[#25335D] p-2 rounded-2xl hover:scale-105 cursor-pointer"
+                    src={flashLight}
+                    alt=""
+                  />
+                  <img
+                    className="w-12 bg-[#25335D] p-2 rounded-2xl hover:scale-105 cursor-pointer"
+                    src={logo}
+                    alt=""
+                    onClick={() => {
+                      setShowLetsChat(true);
+                    }}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     );
