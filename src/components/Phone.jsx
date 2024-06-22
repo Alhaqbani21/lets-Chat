@@ -140,7 +140,7 @@ const Phone = forwardRef(
                   <h1 className="tracking-widest text-base leading-10">
                     {formatDate(currentTime)}
                   </h1>
-                  <h1 className="tracking-widest text-3xl leading-10">
+                  <h1 className="tracking-widest text-3xl leading-10 max-md:text-2xl">
                     Welcome {name}
                   </h1>
                 </div>
